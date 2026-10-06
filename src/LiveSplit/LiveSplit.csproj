@@ -5,7 +5,7 @@
 
     <OutputType>WinExe</OutputType>
     <UseWindowsForms>true</UseWindowsForms>
-    <TargetFramework>net4.8.1</TargetFramework>
+    <TargetFramework>net10.0-windows</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,16 +15,13 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <TargetPath>Localization/%(Filename)%(Extension)</TargetPath>
     </Content>
+    <PackageReference Include="PolySharp" PrivateAssets="all" Version="1.16.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="$(SrcPath)/LiveSplit.Core/LiveSplit.Core.csproj" />
     <ProjectReference Include="$(SrcPath)/LiveSplit.View/LiveSplit.View.csproj" />
     <ProjectReference Include="$(LibPath)/WinForms Color Picker/WinFormsColor/WinFormsColor.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="PolySharp" Version="1.16.0" PrivateAssets="all" />
   </ItemGroup>
 
   <Target Name="CleanOutput" AfterTargets="AfterBuild">
